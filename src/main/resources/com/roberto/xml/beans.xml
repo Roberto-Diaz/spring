@@ -3,20 +3,24 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="persona" class="com.roberto.beans.Persona">
-	<property name="pais" ref="pais"></property>
-	<property name="id" value="1"></property>
-	<property name="nombre" value="Roberto"></property>
-	<property name="apodo" value="imparable"></property>
-	</bean>
-	
-	<bean id="pais" class="com.roberto.beans.Pais">
-	<property name="nombre" value="Mexico" ></property>
-	<property name="ciudad" ref="ciudad"></property>
-	</bean>
-	
-	<bean id="ciudad" class="com.roberto.beans.Ciudad">
-	<property name="nombre" value="Altamirano"></property>
-	</bean>
 
+	<bean id="persona" class="com.roberto.beans.Persona">
+		<property name="pais">
+			<bean id="pais" class="com.roberto.beans.Pais">
+				<property name="nombre" value="Mexico" ></property>
+				<property name="ciudad">
+					<bean id="ciudad" class="com.roberto.beans.Ciudad">
+						<property name="nombre" value="Altamirano"></property>
+					</bean>
+				</property>
+			</bean>
+		</property>
+		<property name="id" value="1"></property>
+		<property name="nombre" value="Roberto"></property>
+		<property name="apodo" value="imparable"></property>
+	</bean>
+	
+	
+	
+	
 </beans>
