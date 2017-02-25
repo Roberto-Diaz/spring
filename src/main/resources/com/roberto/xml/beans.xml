@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="persona" class="com.roberto.beans.Persona">
+	<bean id="persona" class="com.roberto.beans.Persona" name="referenciaPersonaBean2">
 		<property name="pais">
 			<bean id="pais" class="com.roberto.beans.Pais">
 				<property name="nombre" value="Mexico" ></property>
@@ -20,7 +20,7 @@
 		<property name="apodo" value="imparable"></property>
 	</bean>
 	
-	
+	<alias name="persona" alias="referenciaPersonaBean"/>
 	
 	
 </beans>

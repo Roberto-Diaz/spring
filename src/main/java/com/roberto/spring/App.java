@@ -17,7 +17,7 @@ public class App {
 //		Ejemplo con la clase Persona - Inyeccion de Objetos -
 		
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/roberto/xml/beans.xml");
-		Persona per = (Persona) appContext.getBean("persona");
+		Persona per = (Persona) appContext.getBean("referenciaPersonaBean2");
 
 //		En este print, se muestra el nombre del pais y la ciudad por medio de inyecciones de objetos
 		System.out.println(per.getId()+ " "+ per.getNombre()+ " "+ per.getApodo()+ " " 
