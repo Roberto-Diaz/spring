@@ -5,21 +5,36 @@
 
 
 	<bean id="persona" class="com.roberto.beans.Persona" name="referenciaPersonaBean2">
-		<property name="pais">
-			<bean id="pais" class="com.roberto.beans.Pais">
-				<property name="nombre" value="Mexico" ></property>
-				<property name="ciudad">
-					<bean id="ciudad" class="com.roberto.beans.Ciudad">
-						<property name="nombre" value="Altamirano"></property>
-					</bean>
-				</property>
-			</bean>
+		<property name="pais" ref="pais">
 		</property>
 		<property name="id" value="1"></property>
 		<property name="nombre" value="Roberto"></property>
 		<property name="apodo" value="imparable"></property>
 	</bean>
 	
+	<bean id="pais" class="com.roberto.beans.Pais">
+		<property name="nombre" value="Mexico" ></property>
+		<property name="ciudades">
+		<list>
+			<ref bean="ciudad1"/>
+			<ref bean="ciudad2"/>
+			<ref bean="ciudad3"/>
+		</list>
+		
+		</property>
+	</bean>
+				
+	<bean id="ciudad1" class="com.roberto.beans.Ciudad">
+		<property name="nombre" value="Altamirano"></property>
+	</bean>
+		<bean id="ciudad2" class="com.roberto.beans.Ciudad">
+		<property name="nombre" value="Huetamo"></property>
+	</bean>
+		<bean id="ciudad3" class="com.roberto.beans.Ciudad">
+		<property name="nombre" value="Coyuca"></property>
+	</bean>
+		
+		
 	<alias name="persona" alias="referenciaPersonaBean"/>
 	
 	
