@@ -13,31 +13,19 @@ import com.roberto.beans.Persona;
 public class App {
 
 	public static void main(String[] args) {
-//		Si el contexto estubiera en el mismo paquete no fuera necesario escribir la ruta		
-		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/roberto/xml/beans.xml");
+
+//		Ejemplo con la clase Persona - Inyeccion de Objetos -
 		
-//		Forma 1 de llamar las anotaciones con varias configuraciones - Configuracion con anotaciones -
-		//ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig2.class);
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/roberto/xml/beans.xml");
+		Persona per = (Persona) appContext.getBean("persona");
+
+//		En este print, se muestra el nombre del pais y la ciudad por medio de inyecciones de objetos
+		System.out.println(per.getId()+ " "+ per.getNombre()+ " "+ per.getApodo()+ " " 
+		+ per.getPais().getNombre()+" "+ per.getPais().getCiudad().getNombre()); 
+	
 		
-		AnnotationConfigApplicationContext appContext= new AnnotationConfigApplicationContext();
-		appContext.register(AppConfig.class);
-		appContext.register(AppConfig2.class);
-		appContext.refresh();
 		
-		Mundo m = (Mundo) appContext.getBean("marte");
-		
-		System.out.println(m.getSaludo());
-		
-//		la siguiente line permite liberar recursos
 		((ConfigurableApplicationContext)appContext).close();
-		
-//		Ejemplo con la clase Persona - Inyeccion por Constructor -
-		
-		ApplicationContext appContext2 = new ClassPathXmlApplicationContext("com/roberto/xml/beans.xml");
-		Persona per = (Persona) appContext2.getBean("persona");
-		System.out.println(per.getId()+ " "+ per.getNombre()+ " "+ per.getApodo());
-		
-		((ConfigurableApplicationContext)appContext2).close();
 		
 	}
 
