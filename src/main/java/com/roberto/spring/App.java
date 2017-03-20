@@ -17,18 +17,14 @@ public class App {
 		
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/roberto/xml/beans.xml");
 		Persona per = (Persona) appContext.getBean("referenciaPersonaBean2");
+		
+		Ciudad ciu = (Ciudad)appContext.getBean("ciudad");
 
-		String nombreCiudades ="";
-		
-		for (Ciudad c : per.getPais().getCiudades()) {
-			nombreCiudades += c.getNombre()+" - ";		
-		}
-		
-		System.out.println(per.getId()+ " "+ per.getNombre()+ " "+ per.getApodo()+ " " 
-		+ per.getPais().getNombre()+" "+nombreCiudades); 
+		System.out.println(per.getApodo()); 
+		System.out.println(ciu.getNombre()); 
 	
 		
-		
+		//Importante hacer el cierre de configuración del flujo, para poder destruir los bean. 
 		((ConfigurableApplicationContext)appContext).close();
 		
 	}

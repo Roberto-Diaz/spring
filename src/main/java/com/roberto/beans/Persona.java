@@ -5,9 +5,15 @@ public class Persona {
 	private int id;
 	private String nombre;
 	private String apodo;
-//	se crea un atributo de la clase Pais, el cua podra ser accedido de la clase Persona.
 	private Pais pais;
 	
+	private void init(){
+		System.out.println("Antes de inicializar");
+	}
+	
+	private void destroy(){
+		System.out.print("Bean a punto de ser destruido");
+	}
 	
 	public Pais getPais() {
 		return pais;

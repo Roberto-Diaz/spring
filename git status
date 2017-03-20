@@ -1,0 +1,29 @@
+[33mcommit 46ff6b48e2b3fa9e1e370d58a45f6a76e6caef11[m
+Author: Roberto-Diaz <imparable24.7@gmail.com>
+Date:   Sat Feb 25 01:05:58 2017 -0600
+
+    Colecciones
+
+[33mcommit e8f7ab22fad4ed20ab131f897633a35bae75f8c7[m
+Author: Roberto-Diaz <imparable24.7@gmail.com>
+Date:   Sat Feb 25 00:14:48 2017 -0600
+
+    Referenciado Beans
+
+[33mcommit 704057b8388da166a7a4369426ea29c0a512adbc[m
+Author: Roberto-Diaz <imparable24.7@gmail.com>
+Date:   Sat Feb 25 00:05:10 2017 -0600
+
+    Beans anidados
+
+[33mcommit 13fd9335fcf3b0be0b5f9aeee356aac32cddc94a[m
+Author: Roberto-Diaz <imparable24.7@gmail.com>
+Date:   Fri Feb 24 23:53:58 2017 -0600
+
+    Inyeccion de objetos
+
+[33mcommit bfbcc6c97ff4b80ff97933b432b83a5fa3967a1d[m
+Author: Roberto-Diaz <imparable24.7@gmail.com>
+Date:   Thu Feb 23 14:52:17 2017 -0600
+
+    Inyeccion por constructor
