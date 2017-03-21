@@ -1,19 +1,15 @@
 package com.roberto.beans;
 
-public class Persona {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+// Ciclo de vida de los Bean con (Interface)
+public class Persona implements InitializingBean, DisposableBean {
 
 	private int id;
 	private String nombre;
 	private String apodo;
 	private Pais pais;
-	
-	private void init(){
-		System.out.println("Antes de inicializar");
-	}
-	
-	private void destroy(){
-		System.out.print("Bean a punto de ser destruido");
-	}
 	
 	public Pais getPais() {
 		return pais;
@@ -38,6 +34,13 @@ public class Persona {
 	}
 	public void setApodo(String apodo) {
 		this.apodo = apodo;
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Antes de inicializar");
+	}
+	public void destroy() throws Exception {
+		System.out.print("Bean a punto de ser destruido");
 	}
 	
 	
